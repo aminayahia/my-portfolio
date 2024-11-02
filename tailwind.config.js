@@ -32,7 +32,7 @@ module.exports = {
         fontWeight: '500',
       }],
       '3xl': ['23px', {
-        lineHeight: '5rem',
+        lineHeight: '2rem',
         letterSpacing: '-0.01em',
         fontWeight: '500',
       }],
@@ -65,6 +65,11 @@ module.exports = {
       },
       
       'black': '#000000',
+    },
+    borderRadius: {
+      DEFAULT: '8px',
+      full:"9999px"
+    
     }
   },
   plugins: [],

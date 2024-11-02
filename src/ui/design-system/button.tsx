@@ -1,11 +1,11 @@
 import clsx from "clsx";
-import { JSX, ReactNode } from "react";
-
+import { ReactNode } from "react";
+import { IconType } from 'react-icons';
 interface Props {
   size?: "small" | "medium" | "large";
   variant?: "accent" | "outline" | "icon" | "disabled";
-  icon?: JSX.Element;
-  iconTheme?: "accent" | "secondray" | "gray";
+  icon?: IconType;
+  iconTheme?: "accent" | "secondray" ;
   iconPosition?: "left" | "right";
   disabled?: boolean;
   isLoading?: boolean;
@@ -17,7 +17,7 @@ interface Props {
 export const Button = ({
   size = "medium",
   variant = "accent",
-  icon,
+   icon: Icon,
   iconTheme = "accent",
   iconPosition = "right",
   disabled,
@@ -33,33 +33,40 @@ export const Button = ({
   switch (variant) {
     case "accent": //default
       variantStyles =
-        "bg-orange-300 hover:bg-orange-400 text-white-50 rounded px-4 py-2";
+        "bg-orange-300 hover:bg-orange-400 border-orange-300 border-2 text-white-50 rounded px-4 py-2";
       break;
 
     case "outline":
       variantStyles =
         "bg-white-50  border-white-400 rounded  text-white-500 border-2 px-4 py-2";
       break;
-    case "icon":
-      variantStyles =
-        "bg-white hover:bg-gray-300 border-primary-400 text-gray-900 rounded px-4 py-2";
-      break;
     case "disabled":
       variantStyles =
-        "bg-white-50  border-white-400 rounded  text-white-500 border-2 cursor-allowed px-4 py-2";
+        "bg-white-300 hover:bg-white-300  border-white-400 border-2 text-gray-900 rounded px-4 py-2";
+      break;
+    case "icon":
+      if(iconTheme === "accent"){
+        variantStyles="bg-orange-300 rounded-full text-white-50"
+      }
+      if(iconTheme === "secondray"){
+        variantStyles=" bg-white-400 rounded-full  text-white-700"
+      }
       break;
   }
 
   switch (size) {
     case "small":
-      sizeStyles = "text-2xl";
+      sizeStyles = `text-2xl ${variant ==="icon" ?"flex items-center justify-center w-[30px] h-[30px]":"px-[10px] py-[4px]"}`;
+      icoSize="18";
       break;
     case "medium":
-      sizeStyles = "text-3xl";
+      sizeStyles = `text-3xl ${variant ==="icon" ?"flex items-center justify-center w-[40px] h-[40px]":"px-[10px] py-[4px]"}`;
+      icoSize="20";
       break;
 
     case "large":
-      sizeStyles = "text-4xl";
+      sizeStyles = `text-4xl ${variant ==="icon" ?"flex items-center justify-center w-[50px] h-[50px]":"px-[10px] py-[4px]"}`;
+      icoSize="23";
       break;
   }
   return (
@@ -70,7 +77,10 @@ export const Button = ({
         onClick={() => console.log("clic")}
         disabled={disabled || isLoading ? true : false }
       >
-        {children}
+        {Icon && variant=="icon" ? (
+        <Icon size={icoSize} />
+          ) :  <>{children}</>}
+       
       </button>
     </>
   );
