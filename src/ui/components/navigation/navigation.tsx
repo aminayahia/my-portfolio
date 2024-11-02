@@ -3,16 +3,12 @@ import { Typography } from "@/ui/design-system/typography"
 import { Container } from "../container/container"
 
 
-interface Props{
-
-}
-
 export const Navigation =({}:Props)=>{
   return (<>
   <div className="">
     <Container className="flex items-center justify-between" >
       <div>
-        <img src="./public/logo.png" />
+        <img src="/assets/svg/logo.svg" />
       </div>
       <div className="flex items-center justify-center py-4 gap-4">
         <Typography >À propos</Typography>

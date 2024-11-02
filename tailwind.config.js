@@ -12,7 +12,7 @@ module.exports = {
         fontWeight: '500',
       }],
       '7xl': ['55px', {
-        lineHeight: '5rem',
+        lineHeight: '3rem',
         letterSpacing: '-0.01em',
         fontWeight: '500',
       }],
