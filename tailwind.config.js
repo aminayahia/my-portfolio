@@ -17,12 +17,12 @@ module.exports = {
         fontWeight: '500',
       }],
       '6xl': ['44px', {
-        lineHeight: '5rem',
+        lineHeight: '3rem',
         letterSpacing: '-0.01em',
         fontWeight: '500',
       }],
       '5xl': ['35px', {
-        lineHeight: '5rem',
+        lineHeight: '2rem',
         letterSpacing: '-0.01em',
         fontWeight: '500',
       }],

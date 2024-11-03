@@ -29,10 +29,10 @@ export const Typography = ({
   let variantStyles: string = "";
   switch (variant) {
     case "h1":
-      variantStyles = "text-8xl";
+      variantStyles = "text-6xl md:text-8xl";
       break;
     case "h2":
-      variantStyles = "text-7xl";
+      variantStyles = "text-6xl md:text-7xl";
       break;
     case "h3":
       variantStyles = "text-6xl"; //default

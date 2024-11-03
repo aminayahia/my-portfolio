@@ -1,5 +1,5 @@
 export const HeroTopContainer=()=>{
   return(
-    <>View page</>
+    <>Container hero top page</>
   )
 }
